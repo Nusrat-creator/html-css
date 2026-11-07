@@ -1,0 +1,58 @@
+/* Gandalf margin-ə nifrət edir, body margin-ini sıfırlayırıq */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bütün div-lərə box-sizing tətbiq edirik ki, padding eni pozmasın */
+div {
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+/* Rənglər tam təlimata uyğundur */
+.header {
+    background-color: #00B7EB;
+}
+
+.hero {
+    background-color: #FF0000;
+}
+
+.content {
+    background-color: #00FF00;
+}
+
+.sidebar {
+    background-color: #800080;
+}
+
+.footer {
+    background-color: #444444;
+}
+
+/* Mobil görünüş (standart alt-alta düzülüş) */
+.content-sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/* Desktop görünüş (640px-dən böyük ekranlar) */
+@media screen and (min-width: 640px) {
+    .content-sidebar-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .content {
+        flex: 1;
+        width: 50%;
+    }
+    
+    .sidebar {
+        flex: 1;
+        width: 50%;
+    }
+}
