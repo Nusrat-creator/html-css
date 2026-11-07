@@ -1,0 +1,49 @@
+<html style="background-color: black">
+    <div
+        id="my_bouncing_box"
+        style="background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;"
+    >
+        YOUR_QWASAR_LOGIN
+    </div>
+
+    <script type="text/javascript">
+        const box = document.getElementById("my_bouncing_box");
+
+        let x = 0;
+        let y = 0;
+
+        let dx = 5;
+        let dy = 5;
+
+        const speed = 500;
+
+        function moveBox() {
+            const maxX = window.innerWidth - box.offsetWidth;
+            const maxY = window.innerHeight - box.offsetHeight;
+
+            x += dx;
+            y += dy;
+
+            if (x >= maxX) {
+                x = maxX;
+                dx = -Math.abs(dx);
+            } else if (x <= 0) {
+                x = 0;
+                dx = Math.abs(dx);
+            }
+
+            if (y >= maxY) {
+                y = maxY;
+                dy = -Math.abs(dy);
+            } else if (y <= 0) {
+                y = 0;
+                dy = Math.abs(dy);
+            }
+
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+        }
+
+        setInterval(moveBox, speed);
+    </script>
+</html>
